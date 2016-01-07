@@ -1,0 +1,29 @@
+#!/bin/sh
+
+print_usage() {
+    echo "Usage: hst command"
+    echo ""
+    echo "Available commands:"
+    echo ""
+    echo "\t backup \t\t make backup"
+    echo ""
+    echo "\t backup-check \t\t check backup archive status"
+    echo "\t server-check \t\t get server status"
+    echo ""
+}
+
+if [ -z $1 ]; then
+    echo "\nError. No command specified\n"
+    print_usage
+    exit 1
+fi
+
+case "$1" in
+    backup-check)
+	./backups/check-backups.sh
+        ;;
+    *)
+        echo "\nError. No such command\n"
+        print_usage
+	exit 2
+esac
