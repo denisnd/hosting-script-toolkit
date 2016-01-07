@@ -1,0 +1,3 @@
+# sitename	sitedir			db_user		db_password	db_name
+somedir_id	/some/dir
+somesite_id	/some/site	site_db_user	site_db_password	site_db_name
