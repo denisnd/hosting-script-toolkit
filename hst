@@ -12,6 +12,12 @@ print_usage() {
     echo ""
 }
 
+if [ -e ./config.inc ]; then
+    . ./config.inc
+else
+    echo "No config file found!"
+fi
+
 if [ -z $1 ]; then
     echo "\nError. No command specified\n"
     print_usage
